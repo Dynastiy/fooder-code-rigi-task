@@ -1,0 +1,17 @@
+.main-btn {
+    border-radius: 25px;
+    padding: 10px 20px;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.main-btn-primary {
+    background-color: var(--primary);
+}
+
+.main-btn-outline {
+    border: 1px solid var(--primary);
+}
