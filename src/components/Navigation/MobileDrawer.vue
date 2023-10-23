@@ -12,13 +12,13 @@
         <ul class="tw-p-0 tw-flex tw-flex-col tw-space-y-3">
           <li v-for="(item, idx) in menu" :key="idx">
             <a
-              class="tw-text-black tw-text-sm tw-no-underline hover:tw-text-primary tw-font-medium tw-text-gray-100 tw-px-8 tw-flex tw-gap-4 tw-items-center tw-py-4 tw-text-[13px] tw-uppercase tw-block tw-no-underline tw-font-normal tw-tracking-widest"
+              :class="[getRouteData === item.id  ? 'tw-text-primary': 'tw-text-gray-100']"
+              class="tw-text-black tw-text-sm tw-no-underline hover:tw-text-primary tw-font-medium  tw-px-8 tw-flex tw-gap-4 tw-items-center tw-py-4 tw-text-[13px] tw-uppercase tw-block tw-no-underline tw-font-normal tw-tracking-widest"
               :href="item.href"
             >
-            <i-icon :icon="item?.icon" class="tw-text-gray-300 tw-text-lg" />
-            <span>{{ item.title }}</span>  
-            </a
-            >
+              <i-icon :icon="item?.icon" class="tw-text-gray-300 tw-text-lg" />
+              <span>{{ item.title }}</span>
+            </a>
           </li>
         </ul>
       </div>
@@ -58,6 +58,17 @@ export default {
   computed: {
     routeParent() {
       return this.$route.meta.parent;
+    },
+
+    getRouteData() {
+      var urlHash = this.$route.hash;
+      console.log(urlHash);
+      if (urlHash) {
+        var url = urlHash.split("#")[1];
+      } else {
+        url = "home";
+      }
+      return url;
     },
   },
 };

@@ -1,5 +1,6 @@
 <template>
   <div class="tw-bg-white tw-px-8 tw-py-6 tw-shadow-xl">
+   
     <div class="tw-flex tw-justify-between">
       <div class="tw-flex tw-items-center tw-gap-12">
         <span class="tw-font-bold">fooder</span>
@@ -9,8 +10,7 @@
         >
           <li v-for="(item, idx) in menus" :key="idx">
             <a
-              :class="{ 'tw-bg-primary tw-text-white': item.active }"
-              @click="makeActive(item)"
+              :class="{ 'tw-bg-primary tw-text-white': getRouteData === item.id }"
               class="tw-text-black tw-py-1 tw-px-3 tw-block tw-text-sm tw-no-underline hover:tw-text-primary tw-font-medium"
               :href="item.href"
             >
@@ -72,6 +72,18 @@ export default {
       });
     },
   },
+
+  computed: {
+    getRouteData(){
+        var urlHash = this.$route.hash 
+        console.log(urlHash);
+        if(urlHash) {
+            var url = urlHash.split('#')[1]
+        }
+        else {url = "home"}
+        return url
+    }
+  }
 };
 </script>
 
