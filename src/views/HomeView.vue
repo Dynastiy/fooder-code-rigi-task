@@ -4,11 +4,11 @@
     <div class="hero-section tw-flex tw-items-center tw-py-5">
       <div class="lg:tw-px-16 md:tw-px-12 tw-px-6">
         <h1
-          class="tw-text-white tw-text-[40px] lg:tw-text-[60px] md:tw-text-[60px] lg:tw-tracking-widest md:tw-tracking-widest tw-font-bold lg:tw-w-5/12 md:tw-w-5/12"
+          class="animate__animated animate__fadeInUp animate__fast tw-text-white tw-text-[40px] lg:tw-text-[60px] md:tw-text-[60px] lg:tw-tracking-widest md:tw-tracking-widest tw-font-bold lg:tw-w-5/12 md:tw-w-5/12"
         >
           Lorem ipsum dolor elit
         </h1>
-        <p class="tw-text-sm tw-text-gray-400 lg:tw-w-5/12 md:tw-w-5/12">
+        <p class="tw-text-sm tw-text-gray-400 lg:tw-w-5/12 md:tw-w-5/12 animate__animated animate__fadeInUp animate__fast">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos
           molestias, mollitia tempora suscipit quasi aut voluptatem magni
           accusamus nostrum et beatae a laudantium commodi iste obcaecati
@@ -16,7 +16,7 @@
           voluptatem magni accusamus nostrum et beatae mollitia tempora suscipit
           quasi aut voluptatem magni accusamus nostrum et beatae
         </p>
-        <button class="main-btn main-btn-primary">place order</button>
+        <button class="main-btn main-btn-primary animate__animated animate__fadeInUp animate__fast">place order</button>
       </div>
     </div>
 
@@ -35,7 +35,15 @@
     </section>
 
     <section class="tw-mt-12" id="about-us">
+      <div>
         <about-us />
+      </div>
+    </section>
+
+    <section class="tw-mt-12" id="contact-us">
+      <div>
+        <ContactUs />
+      </div>
     </section>
   </div>
 </template>
@@ -44,9 +52,10 @@
 import DishesCards from "@/components/Cards/DishesCards.vue";
 import ProductListPagination from '@/components/Navigation/ProductListPagination.vue';
 import AboutUs from '@/components/Sections/AboutUs.vue';
+import ContactUs from '@/components/Sections/ContactUs.vue';
 export default {
   name: "HomeView",
-  components: { DishesCards, ProductListPagination, AboutUs },
+  components: { DishesCards, ProductListPagination, AboutUs, ContactUs },
 };
 </script>
 

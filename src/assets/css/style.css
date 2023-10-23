@@ -1,3 +1,6 @@
 @import url('./root.css');
 @import url('./tailwind.css');
 @import url('./custom.css');
+/* Animation CSS */
+
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
