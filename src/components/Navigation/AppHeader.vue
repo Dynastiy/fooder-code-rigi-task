@@ -9,7 +9,9 @@
         >
           <li v-for="(item, idx) in menus" :key="idx">
             <a
-              class="tw-text-black tw-text-sm tw-no-underline hover:tw-text-primary tw-font-medium"
+              :class="{ 'tw-bg-primary tw-text-white': item.active }"
+              @click="makeActive(item)"
+              class="tw-text-black tw-py-1 tw-px-3 tw-block tw-text-sm tw-no-underline hover:tw-text-primary tw-font-medium"
               :href="item.href"
             >
               {{ item.title }}</a
@@ -37,9 +39,13 @@
         </a>
       </div>
 
-      <span class="tw-block lg:tw-hidden md:tw-hidden" role="button" @click="$emit('toggleDrawer')">
-          <i-icon icon="ri:menu-fill" width="24px" />
-        </span>
+      <span
+        class="tw-block lg:tw-hidden md:tw-hidden"
+        role="button"
+        @click="$emit('toggleDrawer')"
+      >
+        <i-icon icon="ri:menu-fill" width="24px" />
+      </span>
     </div>
   </div>
 </template>
@@ -51,6 +57,19 @@ export default {
     menus: {
       type: Array,
       defualt: () => [],
+    },
+  },
+
+  data() {
+    return {};
+  },
+
+  methods: {
+    makeActive(selectedItem) {
+      // Mark the clicked item as active
+      this.menus.forEach((item) => {
+        item.active = item === selectedItem;
+      });
     },
   },
 };

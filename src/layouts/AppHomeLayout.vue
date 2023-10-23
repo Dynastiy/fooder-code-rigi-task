@@ -24,21 +24,24 @@ export default {
           href: "/",
           parent: "home",
           id: "home",
-          icon: "iconoir:home"
+          icon: "iconoir:home",
+          active: true,
         },
         {
           title: "about us",
           href: "#about-us",
           parent: "about-us",
           id: "about-us",
-          icon: "mdi:about-circle-outline"
+          icon: "mdi:about-circle-outline",
+          active: false
         },
         {
           title: "contact us",
           href: "#contact-us",
           parent: "contact-us",
           id: "contact-us",
-          icon: "system-uicons:message"
+          icon: "system-uicons:message",
+          active: false
         }
       ],
       drawer: false
